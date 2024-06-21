@@ -270,7 +270,7 @@ local function set_groups()
 	end
 end
 
-function kiss.colorscheme()
+local function kiss_colorscheme()
 	vim.api.nvim_command("hi clear")
 	if vim.fn.exists("syntax_on") then
 		vim.api.nvim_command("syntax reset")
@@ -279,6 +279,5 @@ function kiss.colorscheme()
 	vim.g.colors_name = "kiss"
 	set_groups()
 end
-kiss.colorscheme()
 
-return kiss
+return { kiss_colorscheme = kiss_colorscheme }
